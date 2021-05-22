@@ -16,13 +16,13 @@ namespace WinDraw
     {
         private List<Figure> figures;
         Graphics paper;
+        Bitmap map = new Bitmap(100, 100);
 
         public frmMain()
         {
             InitializeComponent();
-
+            SetSize();
             figures = new List<Figure>();
-            paper = pnlDraw.CreateGraphics();
 
             // Data grid view setup
             dgvFigData.AllowUserToAddRows = false;
@@ -93,6 +93,7 @@ namespace WinDraw
                 var pen = new Pen(btnLineColour.BackColor, (int)edLineWidth.Value);
                 fig.drawer = new WFDrawer(pen, paper);
                 figures.Add(fig);
+                pictureBox1.Image = map;
             }
 
             Redraw();
@@ -109,15 +110,21 @@ namespace WinDraw
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (dlgSave.ShowDialog(this) == DialogResult.OK)
+            saveFileDialog1.Filter = "JPG(*.JPG)|*.jpg";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string path = dlgSave.FileName;
-                using (var sw = new StreamWriter(path, false, System.Text.Encoding.Default))
+                if (pictureBox1.Image != null)
                 {
-                    foreach (var fig in figures)
-                        sw.WriteLine(fig);
+                    pictureBox1.Image.Save(saveFileDialog1.FileName);
                 }
             }
+        }
+
+        private void SetSize()
+        {
+            Rectangle rectangle = Screen.PrimaryScreen.Bounds;
+            map = new Bitmap(rectangle.Width, rectangle.Height);
+            paper = Graphics.FromImage(map);
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -135,5 +142,6 @@ namespace WinDraw
                 }
             }
         }
+
     }
 }

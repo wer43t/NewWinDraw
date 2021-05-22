@@ -39,13 +39,14 @@ namespace WinDraw
             this.lbLineWidth = new System.Windows.Forms.Label();
             this.edLineWidth = new System.Windows.Forms.NumericUpDown();
             this.lbFigures = new System.Windows.Forms.ListBox();
-            this.pnlDraw = new System.Windows.Forms.Panel();
             this.dlgSetColour = new System.Windows.Forms.ColorDialog();
-            this.dlgSave = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlParams.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFigData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edLineWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlParams
@@ -169,21 +170,21 @@ namespace WinDraw
             this.lbFigures.TabIndex = 0;
             this.lbFigures.SelectedIndexChanged += new System.EventHandler(this.lbFigures_SelectedIndexChanged);
             // 
-            // pnlDraw
+            // pictureBox1
             // 
-            this.pnlDraw.BackColor = System.Drawing.Color.White;
-            this.pnlDraw.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlDraw.Location = new System.Drawing.Point(0, 0);
-            this.pnlDraw.Name = "pnlDraw";
-            this.pnlDraw.Size = new System.Drawing.Size(621, 450);
-            this.pnlDraw.TabIndex = 1;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(621, 450);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pnlDraw);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlParams);
             this.Name = "frmMain";
             this.Text = "Draw";
@@ -191,6 +192,7 @@ namespace WinDraw
             this.pnlParams.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFigData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edLineWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -198,7 +200,6 @@ namespace WinDraw
         #endregion
 
         private System.Windows.Forms.Panel pnlParams;
-        private System.Windows.Forms.Panel pnlDraw;
         private System.Windows.Forms.ListBox lbFigures;
         private System.Windows.Forms.Label lbLineWidth;
         private System.Windows.Forms.NumericUpDown edLineWidth;
@@ -209,8 +210,9 @@ namespace WinDraw
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.DataGridView dgvFigData;
-        private System.Windows.Forms.SaveFileDialog dlgSave;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog dlgOpen;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
