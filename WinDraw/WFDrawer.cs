@@ -33,5 +33,10 @@ namespace WinDraw
         {
             paper.DrawRectangle(pen, x, y, width, height);
         }
+
+        public override void DrawTriangle(int x, int y, Point[] p)
+        {
+            paper.DrawPolygon(pen, p);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace WinDrawCore
         public abstract void DrawCircle(int x, int y, int r);
 
         public abstract void DrawRectangle(int x, int y, int height, int width);
+
+        public abstract void DrawTriangle(int x, int y, Point[] points);
     }
 
 }

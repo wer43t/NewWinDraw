@@ -34,6 +34,9 @@ namespace WinDrawCore
                 case "Rectangle":
                     fig = new MyRectangle(figData.Data["X"], figData.Data["Y"], figData.Data["Height"], figData.Data["Width"]);
                     break;
+                case "Triangle":
+                    fig = new Triangle(figData.Data["X"], figData.Data["Y"], figData.Data["endX"], figData.Data["endY"]);
+                    break;
             }
 
             return fig;
@@ -75,6 +78,18 @@ namespace WinDrawCore
                     { "Y", 0 },
                     { "Height", 100 },
                     { "Width", 100 }
+                }
+            });
+
+            figuresData.Add(new FiguresData
+            {
+                Name = "Triangle",
+                Data = new Dictionary<string, int>
+                {
+                    { "X", 0 },
+                    { "Y", 0 },
+                    { "endX", 100 },
+                    { "endY", 100 },
                 }
             });
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -89,6 +90,39 @@ namespace WinDrawCore
         public override string ToString()
         {
             return base.ToString() + $"Height = {height}, Width = {width}";
+        }
+    }
+
+    public class Triangle : Figure
+    {
+        protected int endX;
+        protected int endY;
+
+        public Triangle (int newX, int newY, int newEndX, int newEndY) : base (newX, newY)
+        {
+            endX = newEndX;
+            endY = newEndY;
+        }
+
+        private Point[] GetTrianglePoints()
+        {
+            Point[] p = new Point[3]
+            {
+                new Point(x + (endX - x) / 2, y),
+                new Point(x, endY),
+                new Point(endX, endY)
+            };
+            return p;
+        }
+
+        public override void Draw()
+        {
+            drawer.DrawTriangle(x, y, GetTrianglePoints());
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }
