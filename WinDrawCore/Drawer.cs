@@ -10,6 +10,8 @@ namespace WinDrawCore
     {
         public abstract void DrawLine(int x1, int y1, int x2, int y2);
         public abstract void DrawCircle(int x, int y, int r);
+
+        public abstract void DrawRectangle(int x, int y, int height, int width);
     }
 
 }

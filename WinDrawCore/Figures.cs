@@ -69,4 +69,26 @@ namespace WinDrawCore
             return base.ToString() + $"R={r}";
         }
     }
+
+    public class MyRectangle : Figure
+    {
+        protected int height;
+        protected int width;
+
+        public MyRectangle(int newX, int newY, int newHeight, int newWidth) : base (newX, newY)
+        {
+            height = newHeight;
+            width = newWidth;
+        }
+
+        public override void Draw()
+        {
+            drawer.DrawRectangle(x, y, height, width);
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Height = {height}, Width = {width}";
+        }
+    }
 }

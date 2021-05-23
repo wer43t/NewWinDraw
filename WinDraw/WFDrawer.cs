@@ -28,5 +28,10 @@ namespace WinDraw
         {
             paper.DrawEllipse(pen, x, y, r, r);
         }
+
+        public override void DrawRectangle(int x, int y, int height, int width)
+        {
+            paper.DrawRectangle(pen, x, y, width, height);
+        }
     }
 }

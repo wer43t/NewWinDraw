@@ -31,6 +31,9 @@ namespace WinDrawCore
                 case "Circle":
                     fig = new Circle(figData.Data["X"], figData.Data["Y"], figData.Data["Radius"]);
                     break;
+                case "Rectangle":
+                    fig = new MyRectangle(figData.Data["X"], figData.Data["Y"], figData.Data["Height"], figData.Data["Width"]);
+                    break;
             }
 
             return fig;
@@ -71,7 +74,7 @@ namespace WinDrawCore
                     { "X", 0 },
                     { "Y", 0 },
                     { "Height", 100 },
-                    { "Weight", 100 }
+                    { "Width", 100 }
                 }
             });
 
