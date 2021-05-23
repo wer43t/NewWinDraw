@@ -71,7 +71,9 @@ namespace WinDraw
                     fig.Data[key] = int.Parse(val);
                 }
                 catch (Exception)
-                { }
+                {
+                    throw new ArgumentException("Неправильно введенные данные", key);
+                }
             }
         }
 
