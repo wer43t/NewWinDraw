@@ -129,18 +129,16 @@ namespace WinDraw
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            if (dlgOpen.ShowDialog(this) == DialogResult.OK)
-            {
-                string path = dlgOpen.FileName;
-                using (var sr = new StreamReader(path, System.Text.Encoding.Default))
-                {
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        // ???
-                    }
-                }
-            }
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "JPG(*.JPG)|*.jpg";
+            openFile.ShowDialog();
+            string fNime = openFile.FileName;
+            var img = new Bitmap(fNime);
+            map.Dispose();
+            map = new Bitmap(img);
+            paper = Graphics.FromImage(map);
+            pictureBox1.Image = map;
+            img.Dispose();
         }
 
     }
