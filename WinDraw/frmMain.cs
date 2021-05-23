@@ -141,7 +141,11 @@ namespace WinDraw
             img.Dispose();
         }
 
-        
-
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            paper.Clear(pictureBox1.BackColor);
+            SetSize();
+            pictureBox1.Image = map;
+        }
     }
 }

@@ -43,6 +43,7 @@ namespace WinDraw
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.dlgOpen = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.pnlParams.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFigData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edLineWidth)).BeginInit();
@@ -51,6 +52,7 @@ namespace WinDraw
             // 
             // pnlParams
             // 
+            this.pnlParams.Controls.Add(this.btnClear);
             this.pnlParams.Controls.Add(this.dgvFigData);
             this.pnlParams.Controls.Add(this.btnLoad);
             this.pnlParams.Controls.Add(this.btnSave);
@@ -61,9 +63,9 @@ namespace WinDraw
             this.pnlParams.Controls.Add(this.edLineWidth);
             this.pnlParams.Controls.Add(this.lbFigures);
             this.pnlParams.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnlParams.Location = new System.Drawing.Point(621, 0);
+            this.pnlParams.Location = new System.Drawing.Point(686, 0);
             this.pnlParams.Name = "pnlParams";
-            this.pnlParams.Size = new System.Drawing.Size(179, 450);
+            this.pnlParams.Size = new System.Drawing.Size(179, 495);
             this.pnlParams.TabIndex = 0;
             // 
             // dgvFigData
@@ -175,15 +177,26 @@ namespace WinDraw
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(621, 450);
+            this.pictureBox1.Size = new System.Drawing.Size(686, 495);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(15, 443);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(152, 41);
+            this.btnClear.TabIndex = 10;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(865, 495);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pnlParams);
             this.Name = "frmMain";
@@ -213,6 +226,7 @@ namespace WinDraw
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog dlgOpen;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
